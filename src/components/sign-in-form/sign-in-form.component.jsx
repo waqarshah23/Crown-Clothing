@@ -33,7 +33,7 @@ const SignInForm = () => {
         if(!password || !email) return;
 
         try{
-            const {user} =  await signInAuthWithEmailAndPassword(email, password);
+            await signInAuthWithEmailAndPassword(email, password);
             resetFormFields();
         }
         catch(err){
