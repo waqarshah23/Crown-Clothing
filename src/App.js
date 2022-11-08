@@ -1,11 +1,23 @@
-import { Routes, Route } from "react-router-dom";
-import Navigation from "./routes/navigation/navigation.component";
-import Home from "./routes/home/home.component";
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { Route, Routes } from "react-router-dom";
 import Authentication from './routes/authentication/authentication.component';
-import Shop from "./routes/shop/shop.component";
 import ChecOut from "./routes/checkout/checkout.component";
-
+import Home from "./routes/home/home.component";
+import Navigation from "./routes/navigation/navigation.component";
+import Shop from "./routes/shop/shop.component";
+import { CheckUserSession } from './store/user/user.action';
 const App = () =>  {
+
+  const dispatch = useDispatch();
+
+  useEffect( () => {
+   dispatch(CheckUserSession());
+    // getCurrentUser().then((user) =>{
+    //   console.log(user);
+    //   return dispatch(setCurrentUser(user));
+    // }) 
+}, [dispatch])
   return (
     <Routes>
 
