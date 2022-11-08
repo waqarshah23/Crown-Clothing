@@ -19,7 +19,7 @@ const PaymentForm = () => {
 
         if(!stripe || !elements) return;
         setIsPaymentProcessing(true);
-        const response = await fetch('/./netlify/functions/create-payment-intent', { //http://localhost:8888/.netlify/functions/create-payment-intent
+        const response = await fetch('/.netlify/functions/create-payment-intent', { //http://localhost:8888/.netlify/functions/create-payment-intent
             method: 'post',
             headers: {
                 'Content_Type': 'application/json'
