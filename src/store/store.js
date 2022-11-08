@@ -2,7 +2,7 @@ import { applyMiddleware, compose, createStore } from 'redux';
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { RootReducer } from './root-reducer';
-import {customLogger} from './middleware/middleware';
+//import {customLogger} from './middleware/middleware';
 //import thunk from 'redux-thunk';
 import createSagaMiddleware from '@redux-saga/core';
 import { rootSaga } from './root-saga';
